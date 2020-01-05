@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CoreMVCCRUD.Models;
+using CoreMVCCRUD.Repository;
 
 namespace CoreMVCCRUD.Controllers
 {
@@ -13,6 +14,8 @@ namespace CoreMVCCRUD.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
+        private readonly IRepository<Employee> _employee;
+
         private readonly EmployeeContext _context;
 
         public EmployeesController(EmployeeContext context)
@@ -103,5 +106,7 @@ namespace CoreMVCCRUD.Controllers
         {
             return _context.Employee.Any(e => e.Id == id);
         }
+
+        
     }
 }

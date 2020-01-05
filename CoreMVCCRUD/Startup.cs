@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using CoreMVCCRUD.Models;
+using CoreMVCCRUD.Repository;
 
 
 namespace CoreMVCCRUD
@@ -28,6 +29,7 @@ namespace CoreMVCCRUD
             services.AddControllersWithViews();
             services.AddDbContext<EmployeeContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddTransient<IRepository<Employee>, GenericRepository<Employee>>();
 
 
             //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2);
