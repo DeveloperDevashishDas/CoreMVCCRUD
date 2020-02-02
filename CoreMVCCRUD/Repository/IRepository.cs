@@ -10,7 +10,7 @@ namespace CoreMVCCRUD.Repository
     public interface IRepository<T> where T: class
     {
         List<T> GetAll();
-        T GetById(object Id);
+        T GetById(int Id);
 
 
     }
