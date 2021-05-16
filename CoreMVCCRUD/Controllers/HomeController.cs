@@ -24,7 +24,8 @@ namespace CoreMVCCRUD.Controllers
         }
 
         public IActionResult Privacy()
-        {
+        {   
+
             return View();
         }
 
