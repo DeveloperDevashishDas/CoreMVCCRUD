@@ -31,5 +31,10 @@ namespace CoreMVCCRUD.Repository
         {
             return table.Find(Id);
         }
+
+        public T GetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
